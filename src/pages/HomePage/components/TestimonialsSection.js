@@ -22,12 +22,12 @@ export const TestimonialsSection = () => {
         letterSpacing={0.05}
         size={32}
         color={lightTheme.text.h1}
-        style={{ textTransform: 'uppercase' }}
+        style={{ textTransform: 'uppercase', textAlign: 'center' }}
         family="Avenir"
       >
         WHAT OUR CUSTOMERS SAY
       </Text>
-      <Line width="420px" color={lightTheme.text.h1} />
+      <Line width={window.outerWidth>600 ? "420px" : "230px"} color={lightTheme.text.h1} />
       <CarouselSection>
         <Carousel items={testimonials} backgroundColor={lightTheme.background.secondary} />
       </CarouselSection>
@@ -46,5 +46,7 @@ const Container = styled.div`
 `;
 
 const CarouselSection = styled.div`
-  margin: 0 auto;
+display: flex;
+justify-content: center;
+align-items: center;
 `;

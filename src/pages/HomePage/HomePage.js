@@ -10,6 +10,7 @@ import {
   OurPartnersSection,
   Footer,
 } from './components';
+import { FloatingButton } from '../../components';
 
 export const HomePage = () => {
   return (
@@ -22,6 +23,7 @@ export const HomePage = () => {
       <TestimonialsSection />
       <OurPartnersSection />
       <Footer />
+      <FloatingButton />
     </>
   )
 }

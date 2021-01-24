@@ -38,7 +38,6 @@ export const OurPartnersSection = () => {
         letterSpacing={0.05}
         size={32}
         color={lightTheme.text.h1}
-        style={{ textTransform: 'uppercase' }}
         family="Avenir"
       >
         OUR PARTNERS
@@ -49,12 +48,11 @@ export const OurPartnersSection = () => {
           <img src={partner.icon} alt="partner" style={{ marginLeft: 60 }} />
         ))}
       </Partners>
-      <Spacer vertical size={50} />
+      <Spacer vertical size={80} />
       <Text
         letterSpacing={0.05}
         size={32}
         color={lightTheme.text.h1}
-        style={{ textTransform: 'uppercase' }}
         family="Avenir"
       >
         AS SEEN IN
@@ -62,11 +60,10 @@ export const OurPartnersSection = () => {
       <Line width="150px" color={lightTheme.text.h1} />
       <Partners>
         {sourcesList.map(source => (
-          <img src={source.icon} alt="source" style={{ marginLeft: 50, height: 50 }} />
+          <img src={source.icon} alt="source" style={{ height: 40, marginBottom: 50 }} />
         ))}
       </Partners>
-      <Spacer vertical size={40} />
-      <hr/>
+      <Spacer vertical size={60} />
     </Container>
   )
 };
@@ -77,11 +74,20 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  text-transform: uppercase;
   padding: 50px;
-  margin: 0 auto;
 `;
 
 const Partners = styled.div`
   display: flex;
-  jusitfy-content: space-evenly;
+  align-items: center;  
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 600px) {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    gap: 40px;
+  }
 `;

@@ -27,12 +27,12 @@ export const WeHelpYouSection = () => {
         letterSpacing={0.05}
         size={32}
         color={lightTheme.text.h1}
-        style={{ textTransform: 'uppercase' }}
+        style={{ textTransform: 'uppercase', textAlign: 'center' }}
         family="Avenir"
       >
         WE HELP YOU ACHIEVE YOUR HEALTH GOALS
       </Text>
-      <Line width="40vw" color={lightTheme.text.h1} />
+      <Line width={window.outerWidth>600 ? "40vw" : "60vw"} color={lightTheme.text.h1} />
       <AchievementCardList>
         {cardList.map(card => (
           <AchievementCard>
@@ -59,8 +59,8 @@ export const WeHelpYouSection = () => {
       <YoutubeSection>
         <iframe
           title="Sova Intro Video"
-          width="607"
-          height="342"
+          width={window.outerWidth>600 ? "607" : "300"}
+          height={window.outerWidth>600 ? "342" : "200"}
           src="https://www.youtube.com/embed/-3O3TVzbEJ8"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -111,7 +111,9 @@ const AchievementCard = styled.div`
 `;
 
 const YoutubeSection = styled.div`
-  height: 300px;
   padding: 110px 0 50px 0;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

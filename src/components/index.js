@@ -4,3 +4,4 @@ export * from './Button';
 export * from './Spacer';
 export * from './TimeLineCard';
 export * from './Carousel';
+export * from './FloatingActionButton';

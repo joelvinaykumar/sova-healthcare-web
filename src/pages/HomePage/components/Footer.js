@@ -30,7 +30,7 @@ export const Footer = () => {
 
   return (
     <Container>
-      <Line color={lightTheme.background.secondary} width="60vw" />
+      <Line color={lightTheme.background.secondary} width={window.outerWidth>600 ? "60vw" : "85vw"} />
       <InsideContainer>
         <Left>
           <Text
@@ -66,7 +66,7 @@ export const Footer = () => {
               <img src={contact.icon} alt="icon" />
               <Text
                 family="Avenir"
-                size={15}
+                size={16}
                 color={lightTheme.background.primary}
               >
                 {contact.title}
@@ -102,6 +102,10 @@ const Container = styled.div`
   margin: 0 auto;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 600px) {
+    width: 80vw;
+  }
 `;
 
 const InsideContainer = styled.div`
@@ -110,26 +114,37 @@ const InsideContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const Left = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  // align-items: space-between;
+  align-items: space-between;
   height: 100%;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const Right = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  // align-items: space-between;
   height: 100%;
+
+  @media screen and (max-width: 600px) {
+    margin-top: 50px;
+  }
 `;
 
 const Contact = styled.div`
-  width: 200px;
+  width: 220px;
   display: flex;
   justify-content: space-between;
   align-items: space-between;
@@ -144,9 +159,9 @@ const SocialIcons = styled.div`
 `;
 
 const Input = styled.input`
-  height: 10px;
+  height: 12px;
   width: 361px;
-  padding: 20px;
+  padding: 15px;
   border: 1px solid ${lightTheme.background.primary};
   margin-bottom: 15px;
 
@@ -155,6 +170,10 @@ const Input = styled.input`
   }
 
   &:focus {
-    border: 1px solid red;
+    border: 1px solid ${lightTheme.button.primary};
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 261px;
   }
 `;

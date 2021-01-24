@@ -10,8 +10,6 @@ export const Carousel = ({ backgroundColor, items }) => {
   const [currentItem, setCurrentItem] = useState(0);
   const n = items.length-1;
 
-  console.log(currentItem)
-
   const seePrevious = () => setCurrentItem(currentItem-1 < 0 ? n : currentItem-1);
 
   const seeNext = () => setCurrentItem(currentItem+1 > n ? 0 : currentItem+1);
@@ -27,13 +25,13 @@ export const Carousel = ({ backgroundColor, items }) => {
           onClick={seePrevious}
         />
         <CarouselItem>
-          <img src={items[currentItem].face} alt="carousel item" width={180} style={{ borderRadius: '50%' }} />
+          <Face src={items[currentItem].face} alt="carousel item" width={180} style={{ borderRadius: '50%' }} />
           <Testimonial>
             <Text
               family="Avenir Light"
               size={18}
-              style={{ textAlign: 'center', width: '30vw' }}
               color={lightTheme.background.primary}
+              className="testimonial-message"
             >
               {items[currentItem].message}
             </Text>
@@ -64,23 +62,26 @@ export const Carousel = ({ backgroundColor, items }) => {
 };
 
 const Container = styled.div`
-  height: 333px;
   width: 60vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: ${({ backgroundColor }) => backgroundColor};
-  padding: 30px;
+  padding: 60px 30px;
 
   @media screen and (max-width: 900px) {
-    width: 70vw;
-    height: 444px;
+    width: 80vw;
+    padding: 50px 10px;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 90vw;
+    padding: 50px 10px;
   }
 `;
 
 const Inside = styled.div`
-  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,6 +95,14 @@ const Testimonial = styled.div`
   align-items: space-between;
 `;
 
+const Face = styled.img`
+  width: 100%;
+
+  @media screen and (max-width: 600px) {
+    width: 40%;
+  }
+`;
+
 const Dots = styled.div`
   display: flex;
   justify-content: center;
@@ -104,19 +113,25 @@ const CarouselItem = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50vw;
+  width: 55vw;
   padding: 0 30px;
   margin: 0 auto;
+  text-align: center;
 
   @media screen and (max-width: 900px) {
     padding: 0;
-    width: 60vw;
+    width: 70vw;
+  }
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    padding: 10px;
   }
 `;
 
 const Dot = styled.div`
-  width: 10px;
-  height: 10px;
+  width: ${({ active }) => active ? '11.5px' : '10px'};
+  height: ${({ active }) => active ? '11.5px' : '10px'};
   margin-left: 15px;
   border-radius: 50%;
   cursor: pointer;

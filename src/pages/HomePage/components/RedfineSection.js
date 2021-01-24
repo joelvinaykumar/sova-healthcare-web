@@ -19,7 +19,7 @@ export const RedefineSection = () => {
         letterSpacing={0.05}
         size={32}
         color={lightTheme.text.h1}
-        style={{ textTransform: 'uppercase' }}
+        style={{ textTransform: 'uppercase', textAlign: 'center' }}
         family="Avenir"
       >
         REDEFINE YOUR RELATIONSHIP WITH FOOD
@@ -45,12 +45,13 @@ export const RedefineSection = () => {
 };
 
 const Container = styled.div`
-  height: 250px;
+  width: 100%;
   background-color: ${lightTheme.background.secondary};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 60px 0;
 `;
 
 const Line = styled.div`
@@ -58,12 +59,18 @@ const Line = styled.div`
   width: 40vw;
   border-bottom: 3px solid ${({ color }) => color};
   margin-bottom: 48px;
+
+  @media screen and (max-width: 400px) {
+    width: 70vw;
+  }
 `;
 
 const PointCardList = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
 `;
 
 const PointCard = styled.div`

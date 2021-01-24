@@ -41,6 +41,13 @@ const Container = styled.div`
   justify-content: stretch;
   align-items: center;
   text-align: center;
+
+  @media screen and (max-width: 600px) {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+  }
 `;
 
 const Index = styled.div`

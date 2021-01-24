@@ -18,45 +18,118 @@ export const NavBar = () => {
 
   return (
     <NavContainer>
-      <img src={Logo} alt="logo" />
-      <Spacer horizontal size={40} />
-      <Routes>
-        {routes.map(route => <Link href={route.link}>{route.label}</Link>)}
-      </Routes>
-      <Spacer horizontal size={40} />
-      <PrimaryButton
-        width={125}
-        height={38}
-        borderRadius={28}
-        color="white"
-        backgroundColor={lightTheme.button.primary}
-        href="https://app.sova.health/signup"
-      >
-        <Text family="Avenir" size={15} style={{ textTransform: 'uppercase' }} >Get Started</Text>
-      </PrimaryButton>
+      <NavDiv>
+        <a href="/"><img src={Logo} alt="logo" /></a>
+        <Spacer horizontal size={40} />
+        <Routes>
+          {window.outerWidth>600
+          ? routes.map(route => (
+          <Link href={route.link}>
+            <Text
+              color="white"
+              family="Avenir Light"
+              style={{ textAlign: 'center' }}
+            >
+              {route.label}
+            </Text>
+          </Link>
+          ))
+          : (
+            <>
+              <Text
+                color="white"
+                family="Avenir Light"
+                style={{ textAlign: 'center' }}
+                className="dropdown-menu"
+              >
+                -Menu-
+              </Text>
+            <RoutesDropDown className="dropdown-content">
+              {routes.map(route => (
+                <Link href={route.link}>
+                  <Text
+                    color="white"
+                    family="Avenir Light"
+                    style={{ textAlign: 'center' }}
+                  >
+                    {route.label}
+                  </Text>
+                </Link>
+              ))}
+            </RoutesDropDown>
+            </>
+          )
+          }
+        </Routes>
+        <Spacer horizontal size={40} />
+        <PrimaryButton
+          width={125}
+          height={38}
+          borderRadius={28}
+          color="white"
+          backgroundColor={lightTheme.button.primary}
+          href="https://app.sova.health/signup"
+        >
+          <Text family="Avenir" size={15} style={{ textTransform: 'uppercase' }} >Get Started</Text>
+        </PrimaryButton>
+      </NavDiv>
     </NavContainer>
   )
 }
 
 const NavContainer = styled.div`
-  display: flex;
   width: 100%;
-  padding: 0 10px;
-  justify-content: center;
-  align-items: center;
+  padding: 10px;
   background-color: ${lightTheme.background.primary};
   position: fixed;
   height: 60px;
   z-index: 9999;
   top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  dropdwon-menu:hover .dropdown-content {
+    display: flex;
+  }
+
+  .dropdwon-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 400px) {
+    padding: 20px;
+  }
+`;
+
+const NavDiv = styled.div`
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
 
   @media screen and (max-width: 900px) {
-    
+    width: 100%;
+  }
+
+  @media screen and (max-width: 400px) {
+    padding: 30px;
   }
 `;
 
 const Routes = styled.div`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const RoutesDropDown = styled.div`
+  display: none;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 `;

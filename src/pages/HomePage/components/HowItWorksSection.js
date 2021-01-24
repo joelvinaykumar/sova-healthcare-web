@@ -25,7 +25,7 @@ export const HowItWorksSection = () => {
         letterSpacing={0.05}
         size={32}
         color={lightTheme.text.h1}
-        style={{ textTransform: 'uppercase' }}
+        style={{ textTransform: 'uppercase', textAlign: 'center' }}
         family="Avenir"
       >
         How it Works?
@@ -36,7 +36,7 @@ export const HowItWorksSection = () => {
           <>
             {/* <Path /> */}
             <TimeLineCard
-              index={i}
+              index={i+1}
               { ...card }
             />
           </>
@@ -46,7 +46,7 @@ export const HowItWorksSection = () => {
         letterSpacing={1.6}
         size={16}
         color={lightTheme.background.primary}
-        style={{ textTransform: 'uppercase' }}
+        style={{ textTransform: 'uppercase', textAlign: 'center' }}
         family="Avenir"
       >
         SEE HOW THE COMPLETE PROCESS WORKS
@@ -62,26 +62,24 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 `;
 
 const AchievementCardList = styled.div`
   display: flex;
   justify-content: stretch;
+  align-items: space-between;
   width: 45vw;
   margin: 0 auto;
   padding-bottom: 50px;
 
-  @media screen and (max-width: 900px) {
-    width: 55vw;
+  @media screen and (max-width: 800px) {
+    width: 80vw;
   }
-`;
 
-const Path = styled.div`
-  height: 10px;
-  width: 300px;
-  border-bottom: 3px solid ${lightTheme.background.primary};
-  position: relative;
-  top: 100;
-  left: 0;
-  z-index: 0;
+  @media screen and (max-width: 600px) {
+    width: 70vw;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 `;
