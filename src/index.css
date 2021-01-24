@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  width: 100vw;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +11,24 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+  font-family: 'HelveticaNueue Light';
+  src: local('HelveticaNueue Light'), url(./assets/fonts/helveticaneue/HelveticaNeue\ Light.ttf);
+}
+
+@font-face {
+  font-family: 'Avenir Roman';
+  src: local('Avenir Roman'), url(./assets/fonts/avenir_ff/AvenirLTStd-Roman.otf);
+}
+
+@font-face {
+  font-family: 'Avenir Light';
+  src: local('Avenir Light'), url(./assets/fonts/avenir_ff/avenir-light.otf);
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: local('Avenir'), url(./assets/fonts/avenir_ff/AvenirLTStd-Black.otf);
 }
