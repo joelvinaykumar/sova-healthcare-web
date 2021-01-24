@@ -45,7 +45,7 @@ export const OurPartnersSection = () => {
       <Line width="180px" color={lightTheme.text.h1} />
       <Partners>
         {partnersList.map(partner => (
-          <img src={partner.icon} alt="partner" style={{ marginLeft: 60 }} />
+          <img src={partner.icon} alt="source" style={{ height: 40, marginBottom: 50 }} />
         ))}
       </Partners>
       <Spacer vertical size={80} />
@@ -81,8 +81,10 @@ const Container = styled.div`
 
 const Partners = styled.div`
   display: flex;
+  justify-content: space-evenly;
   align-items: center;  
   flex-wrap: wrap;
+  width: 80%;
 
   @media screen and (max-width: 600px) {
     display: grid;
