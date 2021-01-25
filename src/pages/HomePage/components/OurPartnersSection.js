@@ -90,6 +90,5 @@ const Partners = styled.div`
     display: grid;
     justify-content: center;
     align-content: center;
-    gap: 40px;
   }
 `;

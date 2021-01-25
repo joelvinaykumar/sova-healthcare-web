@@ -42,7 +42,7 @@ export const Footer = () => {
             Just good content. No spam.<br />
             Sign up for our newsletter
           </Text>
-          <Input placeholder="Your Email" value={email} onChange={e => setEmail(e.target.value)} />
+          <Input type="email" placeholder="Your Email" value={email} onChange={e => setEmail(e.target.value)} />
           <PrimaryButton
             color={lightTheme.background.primary}
             backgroundColor={lightTheme.background.primary}
@@ -129,6 +129,8 @@ const Left = styled.div`
 
   @media screen and (max-width: 600px) {
     flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 `;
 
@@ -140,6 +142,8 @@ const Right = styled.div`
 
   @media screen and (max-width: 600px) {
     margin-top: 50px;
+    align-items: center;
+    width: 100%;
   }
 `;
 

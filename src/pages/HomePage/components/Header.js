@@ -61,6 +61,7 @@ const HeaderContainer = styled.div`
 
   @media screen and (max-width: 600px) {
     flex-direction: column;
+    padding: 100px 0 50px 0;
   }
 `;
 
@@ -71,7 +72,9 @@ const InnerDiv = styled.div`
   width: 65%;
 
   @media screen and (max-width: 600px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
+    text-align: center;
+    align-items: center;
   }
 `;
 
@@ -91,6 +94,10 @@ const Left = styled.div`
 
   @media screen and (max-width: 600px) {
     width: 95%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -100,7 +107,7 @@ const Right = styled.div`
   align-items: center;
 
   @media screen and (max-width: 600px) {
-    margin-top: 30px;
+    
   }
 `;
 
@@ -108,6 +115,6 @@ const Banner = styled.img`
   width: 100%;
 
   @media screen and (max-width: 600px) {
-    width: 250px;
+    width: 300px;
   }
 `;
